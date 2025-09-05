@@ -14,11 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.route('/').get((req, res) => {
-  // Change the response to render the Pug template
-  res.render('index');
+  res.render('index', { title: 'Hello', message: 'Please log in' });
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
